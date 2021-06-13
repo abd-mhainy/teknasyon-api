@@ -6,7 +6,8 @@ reporting part
 I will write the curl request i used in each endpoint
 
 - Register:
-  `curl -X POST \
+
+`curl -X POST \
   http://127.0.0.1:8000/api/device/register \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
@@ -19,13 +20,15 @@ I will write the curl request i used in each endpoint
   }'`
 
   output:
-  `{
+  
+`{
   "status": "ok",
   "clientToken": "03c78a06-d556-4f1d-9049-a5939b1d6603"
   }`
 
 - Purchase:
-  `curl -X POST \
+  
+`curl -X POST \
   http://127.0.0.1:8000/api/device/purchase \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
@@ -36,7 +39,8 @@ I will write the curl request i used in each endpoint
   }'`
 
   output:
-  `{
+  
+`{
   "status": true,
   "data": {
   "clientToken": "03c78a06-d556-4f1d-9049-a5939b1d6603",
@@ -49,7 +53,8 @@ I will write the curl request i used in each endpoint
   "deviceId": 2 } }`
 
 - Check Subscription:
-  `curl -X POST \
+  
+`curl -X POST \
   http://127.0.0.1:8000/api/device/check-subscription \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
@@ -59,7 +64,8 @@ I will write the curl request i used in each endpoint
   }'`
 
   output:
-  `{
+  
+`{
   "status": true,
   "data": {
   "deviceStatus": "renewed",
@@ -68,6 +74,7 @@ I will write the curl request i used in each endpoint
   } }`
 
 for reporting, you can check this endpoint after adding some records
+
 `curl -X GET \
 'http://127.0.0.1:8000/api/report/get?appId=710&os=ios&startDate=01-06-2021&endDate=13-06-2021' \
 -H 'cache-control: no-cache' \
